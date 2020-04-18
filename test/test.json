@@ -1,0 +1,17 @@
+[
+  {"teacher":[  
+    {
+    "Name": "test"
+    }
+  ]},
+  {"students":[
+    {        
+	"Student": "1",
+        "Course": "1A",
+	"Subject": "Chemestry",
+	"Grade1": "60",
+	"Grade2": "80",
+	"Grace3": "70"
+    }
+  ]}
+]
