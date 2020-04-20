@@ -16,10 +16,17 @@ public class Teacher<T> implements List<T> {
 
     public Teacher(){size = 0; }
 
-    public boolean add(String NewName, String NewLName, String NewBD, String NewID, String Firstsubject, Person Person) {
+    public boolean add(String NewName, String NewLName, String NewBD, String NewID, String Firstsubject, Person persons, Subject storedSubjects) {
 
-        if(Person.add(NewName, NewLName, NewBD, NewID)==true) {
-            this.Subjects.add(Firstsubject);
+        if(persons.add(NewName, NewLName, NewBD, NewID)==true) {
+
+            if(storedSubjects.add(Firstsubject, NewID)==true){
+                this.Subjects.add(Firstsubject);
+            }else{
+                storedSubjects.changeTeacher(Firstsubject, NewID);
+                this.Subjects.add(Firstsubject);
+            }
+
             this.active = true;
             TeacherNode teacher = new TeacherNode(NewID, Subjects, active);
             if (isEmpty() == true) {
